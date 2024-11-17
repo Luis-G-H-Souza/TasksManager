@@ -1,11 +1,12 @@
-const app = require('express')()
+const express = require('express')
+const app = express()
 const knex = require('knex')
-const knexfile = require('./knexfile')
+const knexfile = require('../knexfile')
 const consign = require('consign')
 
 app.db = knex(knexfile.test)
 
-app.use(app.json())
+app.use(express.json())
 
 consign({ cwd: 'src', verbose: false })
   .include('./services')
