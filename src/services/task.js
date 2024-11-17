@@ -18,5 +18,10 @@ module.exports = (app) => {
       return error
     }
   }
-  return { save }
+
+  const find = async (filter = {}) => {
+    return app.db('tasks').select('*')
+  }
+
+  return { save, find }
 }

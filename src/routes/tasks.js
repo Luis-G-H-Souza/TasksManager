@@ -11,5 +11,12 @@ module.exports = (app) => {
       res.status(500).json(error)
     }
   }
-  return { create }
+
+  const find = async (req, res) => {
+    // TODO Adicionar paginação depois
+
+    const car = await app.services.task.find()
+    res.status(200).json(car)
+  }
+  return { create, find }
 }

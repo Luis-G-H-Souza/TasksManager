@@ -1,7 +1,7 @@
 module.exports = (app) => {
   app.route('/task')
     .post(app.routes.tasks.create)
-  // .get(app.routes.tasks.find)
+    .get(app.routes.tasks.find)
 
 //  app.route('/tasks/:id'
   //  .get(app.routes.tasks.getId)
